@@ -1,8 +1,4 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
+--Made by NoobSploit#0001 leaving it open source because im to lazy to obfuscate it
 local ServerInfo = Instance.new("ScreenGui")
 local ServerInfoFrame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -29,8 +25,6 @@ local Name_2 = Instance.new("Frame")
 local KohlsAdminHouse = Instance.new("TextLabel")
 local UICorner_7 = Instance.new("UICorner")
 local Regen = Instance.new("TextLabel")
-
---Properties:
 
 ServerInfo.Name = "ServerInfo"
 ServerInfo.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -250,11 +244,11 @@ Regen.TextColor3 = Color3.fromRGB(0, 0, 0)
 Regen.TextSize = 14.000
 Regen.TextWrapped = true
 
--- Scripts:
-
-local function OYKNMGO_fake_script() -- ServerInfoFrame.LocalScript 
+local function EHLELN_fake_script() -- ServerInfoFrame.LocalScript 
 	local script = Instance.new('LocalScript', ServerInfoFrame)
 
+	-- not my drag script
+	
 	local UserInputService = game:GetService("UserInputService")
 	
 	local gui = script.Parent
@@ -295,18 +289,14 @@ local function OYKNMGO_fake_script() -- ServerInfoFrame.LocalScript
 		end
 	end)
 end
-coroutine.wrap(OYKNMGO_fake_script)()
-local function NTOBK_fake_script() -- ServerInfoFrame.LocalScript 
+coroutine.wrap(EHLELN_fake_script)()
+local function EAKIFF_fake_script()
 	local script = Instance.new('LocalScript', ServerInfoFrame)
 
 	if game.PlaceId == 112420803 or 115670532 then
 		script.Parent.Kah.Visible = true
 	else
 		script.Parent.Kah:Destroy()
-	end
-	
-	function roundNumber(num, numDecimalPlaces)
-		return tonumber(string.format("%." .. (numDecimalPlaces or 0) .. "f", num))
 	end
 	
 	local FPS = 0
@@ -344,15 +334,15 @@ local function NTOBK_fake_script() -- ServerInfoFrame.LocalScript
 		elseif not game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
 			script.Parent.HumanoidRootPartPos.Text = 'HumanoidRootPart Not Found'
 		end
-		script.Parent.TimeInGame.Text = roundNumber(game.workspace.DistributedGameTime)..' seconds'
+		script.Parent.TimeInGame.Text = tonumber(string.format("%." .. (0) .. "f", game.workspace.DistributedGameTime))..' seconds'
 		script.Parent.LocalPlayerName.Text  = game.Players.LocalPlayer.Name
 		script.Parent.Fps.Text = tostring(FPS)..' fps'
 		script.Parent.Ping.Text = string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(), " ")[1]..' ms'
 		wait(0.5)
 	until script.Parent.Parent == nil
 end
-coroutine.wrap(NTOBK_fake_script)()
-local function HCKIS_fake_script() -- Kah.LocalScript 
+coroutine.wrap(EAKIFF_fake_script)()
+local function TGJAVCB_fake_script() -- Kah.LocalScript 
 	local script = Instance.new('LocalScript', Kah)
 
 	repeat
@@ -366,4 +356,4 @@ local function HCKIS_fake_script() -- Kah.LocalScript
 		wait(0.1)
 	until script.Parent.Parent == nil
 end
-coroutine.wrap(HCKIS_fake_script)()
+coroutine.wrap(TGJAVCB_fake_script)()
