@@ -1,0 +1,369 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ServerInfo = Instance.new("ScreenGui")
+local ServerInfoFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Name = Instance.new("Frame")
+local ServerStats = Instance.new("TextLabel")
+local UICorner_2 = Instance.new("UICorner")
+local Players = Instance.new("TextLabel")
+local GameName = Instance.new("TextLabel")
+local LocalPlayerName = Instance.new("TextLabel")
+local Ping = Instance.new("TextLabel")
+local HeadShot = Instance.new("ImageLabel")
+local UICorner_3 = Instance.new("UICorner")
+local HumanoidRootPartPos = Instance.new("TextLabel")
+local Fps = Instance.new("TextLabel")
+local JobId = Instance.new("TextLabel")
+local CopyJobId = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local Rejoin = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local TimeInGame = Instance.new("TextLabel")
+local Kah = Instance.new("Frame")
+local UICorner_6 = Instance.new("UICorner")
+local Name_2 = Instance.new("Frame")
+local KohlsAdminHouse = Instance.new("TextLabel")
+local UICorner_7 = Instance.new("UICorner")
+local Regen = Instance.new("TextLabel")
+
+--Properties:
+
+ServerInfo.Name = "ServerInfo"
+ServerInfo.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ServerInfo.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ServerInfo.ResetOnSpawn = false
+
+ServerInfoFrame.Name = "ServerInfoFrame"
+ServerInfoFrame.Parent = ServerInfo
+ServerInfoFrame.BackgroundColor3 = Color3.fromRGB(81, 87, 98)
+ServerInfoFrame.BackgroundTransparency = 0.300
+ServerInfoFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)
+ServerInfoFrame.BorderSizePixel = 0
+ServerInfoFrame.Position = UDim2.new(0.597264409, -210, 0.321368933, 0)
+ServerInfoFrame.Size = UDim2.new(0, 227, 0, 213)
+
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = ServerInfoFrame
+
+Name.Name = "Name"
+Name.Parent = ServerInfoFrame
+Name.BackgroundColor3 = Color3.fromRGB(81, 87, 98)
+Name.BackgroundTransparency = 0.300
+Name.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Name.Size = UDim2.new(0, 227, 0, 24)
+
+ServerStats.Name = "Server Stats"
+ServerStats.Parent = Name
+ServerStats.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ServerStats.BackgroundTransparency = 1.000
+ServerStats.Position = UDim2.new(0.06167401, 0, -0.541666687, 0)
+ServerStats.Size = UDim2.new(0, 200, 0, 50)
+ServerStats.Font = Enum.Font.SourceSans
+ServerStats.Text = "Server  Stats"
+ServerStats.TextColor3 = Color3.fromRGB(0, 0, 0)
+ServerStats.TextSize = 14.000
+
+UICorner_2.CornerRadius = UDim.new(0, 10)
+UICorner_2.Parent = Name
+
+Players.Name = "Players"
+Players.Parent = ServerInfoFrame
+Players.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Players.BackgroundTransparency = 1.000
+Players.Position = UDim2.new(-5.58793545e-09, 0, 0.201877922, 0)
+Players.Size = UDim2.new(0, 100, 0, 26)
+Players.Font = Enum.Font.SourceSans
+Players.Text = "nil/nil"
+Players.TextColor3 = Color3.fromRGB(0, 0, 0)
+Players.TextSize = 15.000
+
+GameName.Name = "GameName"
+GameName.Parent = ServerInfoFrame
+GameName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GameName.BackgroundTransparency = 1.000
+GameName.Position = UDim2.new(0.277533054, 0, 0.112676054, 0)
+GameName.Size = UDim2.new(0, 100, 0, 26)
+GameName.Font = Enum.Font.SourceSans
+GameName.Text = "nil"
+GameName.TextColor3 = Color3.fromRGB(0, 0, 0)
+GameName.TextScaled = true
+GameName.TextSize = 14.000
+GameName.TextWrapped = true
+
+LocalPlayerName.Name = "LocalPlayerName"
+LocalPlayerName.Parent = ServerInfoFrame
+LocalPlayerName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LocalPlayerName.BackgroundTransparency = 1.000
+LocalPlayerName.Position = UDim2.new(0.202643171, 0, 0.849765241, 0)
+LocalPlayerName.Size = UDim2.new(0, 67, 0, 26)
+LocalPlayerName.Font = Enum.Font.SourceSans
+LocalPlayerName.Text = "nil"
+LocalPlayerName.TextColor3 = Color3.fromRGB(0, 0, 0)
+LocalPlayerName.TextScaled = true
+LocalPlayerName.TextSize = 14.000
+LocalPlayerName.TextWrapped = true
+
+Ping.Name = "Ping"
+Ping.Parent = ServerInfoFrame
+Ping.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Ping.BackgroundTransparency = 1.000
+Ping.Position = UDim2.new(0.50220263, 0, 0.323943645, 0)
+Ping.Size = UDim2.new(0, 100, 0, 26)
+Ping.Font = Enum.Font.SourceSans
+Ping.Text = "nil ms"
+Ping.TextColor3 = Color3.fromRGB(0, 0, 0)
+Ping.TextSize = 15.000
+
+HeadShot.Name = "HeadShot"
+HeadShot.Parent = ServerInfoFrame
+HeadShot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HeadShot.BackgroundTransparency = 1.000
+HeadShot.Position = UDim2.new(0, 0, 0.826291084, 0)
+HeadShot.Size = UDim2.new(0, 37, 0, 37)
+HeadShot.Image = "rbxthumb://type=AvatarHeadShot&id=1676987923&w=420&h=420"
+
+UICorner_3.CornerRadius = UDim.new(0, 10)
+UICorner_3.Parent = HeadShot
+
+HumanoidRootPartPos.Name = "HumanoidRootPartPos"
+HumanoidRootPartPos.Parent = ServerInfoFrame
+HumanoidRootPartPos.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HumanoidRootPartPos.BackgroundTransparency = 1.000
+HumanoidRootPartPos.Position = UDim2.new(0.555066109, 0, 0.849765241, 0)
+HumanoidRootPartPos.Size = UDim2.new(0, 88, 0, 26)
+HumanoidRootPartPos.Font = Enum.Font.SourceSans
+HumanoidRootPartPos.Text = "nil"
+HumanoidRootPartPos.TextColor3 = Color3.fromRGB(0, 0, 0)
+HumanoidRootPartPos.TextScaled = true
+HumanoidRootPartPos.TextSize = 15.000
+HumanoidRootPartPos.TextWrapped = true
+
+Fps.Name = "Fps"
+Fps.Parent = ServerInfoFrame
+Fps.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Fps.BackgroundTransparency = 1.000
+Fps.Position = UDim2.new(0, 0, 0.323943645, 0)
+Fps.Size = UDim2.new(0, 100, 0, 26)
+Fps.Font = Enum.Font.SourceSans
+Fps.Text = "nil fps"
+Fps.TextColor3 = Color3.fromRGB(0, 0, 0)
+Fps.TextSize = 15.000
+
+JobId.Name = "JobId"
+JobId.Parent = ServerInfoFrame
+JobId.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+JobId.BackgroundTransparency = 1.000
+JobId.Position = UDim2.new(0.06167401, 0, 0.441314548, 0)
+JobId.Size = UDim2.new(0, 200, 0, 26)
+JobId.Font = Enum.Font.SourceSans
+JobId.Text = "JobId"
+JobId.TextColor3 = Color3.fromRGB(0, 0, 0)
+JobId.TextSize = 15.000
+JobId.TextWrapped = true
+
+CopyJobId.Name = "CopyJobId"
+CopyJobId.Parent = JobId
+CopyJobId.BackgroundColor3 = Color3.fromRGB(74, 80, 90)
+CopyJobId.BackgroundTransparency = 0.300
+CopyJobId.Position = UDim2.new(0.0599999987, 0, 1, 0)
+CopyJobId.Size = UDim2.new(0, 74, 0, 24)
+CopyJobId.Font = Enum.Font.SourceSans
+CopyJobId.Text = "Copy JobId"
+CopyJobId.TextColor3 = Color3.fromRGB(0, 0, 0)
+CopyJobId.TextSize = 14.000
+
+UICorner_4.CornerRadius = UDim.new(0, 5)
+UICorner_4.Parent = CopyJobId
+
+Rejoin.Name = "Rejoin"
+Rejoin.Parent = JobId
+Rejoin.BackgroundColor3 = Color3.fromRGB(74, 80, 90)
+Rejoin.BackgroundTransparency = 0.300
+Rejoin.Position = UDim2.new(0.560000002, 0, 1, 0)
+Rejoin.Size = UDim2.new(0, 74, 0, 24)
+Rejoin.Font = Enum.Font.SourceSans
+Rejoin.Text = "Rejoin"
+Rejoin.TextColor3 = Color3.fromRGB(0, 0, 0)
+Rejoin.TextSize = 14.000
+
+UICorner_5.CornerRadius = UDim.new(0, 5)
+UICorner_5.Parent = Rejoin
+
+TimeInGame.Name = "TimeInGame"
+TimeInGame.Parent = ServerInfoFrame
+TimeInGame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TimeInGame.BackgroundTransparency = 1.000
+TimeInGame.Position = UDim2.new(0.49779734, 0, 0.201877892, 0)
+TimeInGame.Size = UDim2.new(0, 100, 0, 26)
+TimeInGame.Font = Enum.Font.SourceSans
+TimeInGame.Text = "nil s"
+TimeInGame.TextColor3 = Color3.fromRGB(0, 0, 0)
+TimeInGame.TextSize = 15.000
+
+Kah.Name = "Kah"
+Kah.Parent = ServerInfoFrame
+Kah.BackgroundColor3 = Color3.fromRGB(81, 87, 98)
+Kah.BackgroundTransparency = 0.300
+Kah.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Kah.BorderSizePixel = 0
+Kah.Position = UDim2.new(0.410723805, -210, 0.00212013721, 0)
+Kah.Size = UDim2.new(0, 107, 0, 213)
+Kah.Visible = false
+
+UICorner_6.CornerRadius = UDim.new(0, 10)
+UICorner_6.Parent = Kah
+
+Name_2.Name = "Name"
+Name_2.Parent = Kah
+Name_2.BackgroundColor3 = Color3.fromRGB(81, 87, 98)
+Name_2.BackgroundTransparency = 0.300
+Name_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Name_2.Size = UDim2.new(0, 107, 0, 24)
+
+KohlsAdminHouse.Name = "Kohls Admin House"
+KohlsAdminHouse.Parent = Name_2
+KohlsAdminHouse.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KohlsAdminHouse.BackgroundTransparency = 1.000
+KohlsAdminHouse.Position = UDim2.new(0, 0, -0.541666687, 0)
+KohlsAdminHouse.Size = UDim2.new(0, 107, 0, 50)
+KohlsAdminHouse.Font = Enum.Font.SourceSans
+KohlsAdminHouse.Text = "Kohls Admin House"
+KohlsAdminHouse.TextColor3 = Color3.fromRGB(0, 0, 0)
+KohlsAdminHouse.TextSize = 14.000
+
+UICorner_7.CornerRadius = UDim.new(0, 10)
+UICorner_7.Parent = Name_2
+
+Regen.Name = "Regen"
+Regen.Parent = Kah
+Regen.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Regen.BackgroundTransparency = 1.000
+Regen.Position = UDim2.new(0, 0, 0.0845070407, 0)
+Regen.Size = UDim2.new(0, 107, 0, 38)
+Regen.Font = Enum.Font.SourceSans
+Regen.Text = "Regen is nil"
+Regen.TextColor3 = Color3.fromRGB(0, 0, 0)
+Regen.TextSize = 14.000
+Regen.TextWrapped = true
+
+-- Scripts:
+
+local function OYKNMGO_fake_script() -- ServerInfoFrame.LocalScript 
+	local script = Instance.new('LocalScript', ServerInfoFrame)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(OYKNMGO_fake_script)()
+local function NTOBK_fake_script() -- ServerInfoFrame.LocalScript 
+	local script = Instance.new('LocalScript', ServerInfoFrame)
+
+	if game.PlaceId == 112420803 or 115670532 then
+		script.Parent.Kah.Visible = true
+	else
+		script.Parent.Kah:Destroy()
+	end
+	
+	function roundNumber(num, numDecimalPlaces)
+		return tonumber(string.format("%." .. (numDecimalPlaces or 0) .. "f", num))
+	end
+	
+	local FPS = 0
+	
+	local Tiempo = tick()
+	
+	spawn(function()
+		while game:GetService("RunService").RenderStepped:wait() do
+			local Transcurrido = math.abs(Tiempo-tick())
+			Tiempo = tick()
+			FPS = math.floor(1/Transcurrido)
+		end
+	end)
+	
+	script.Parent.HeadShot.Image = game.Players:GetUserThumbnailAsync(game.Players.LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+	script.Parent.GameName.Text = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+	script.Parent.JobId.Text = game.JobId
+	
+	--buttons
+	script.Parent.JobId.CopyJobId.MouseButton1Click:Connect(function()
+		setclipboard("Roblox.GameLauncher.joinGameInstance("..game.PlaceId..', "'..game.JobId..'")')
+	end)
+	
+	script.Parent.JobId.Rejoin.MouseButton1Click:Connect(function()
+		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+	end)
+	
+	repeat
+		local players = game.Players:GetPlayers()
+		script.Parent.Players.Text = #players..'/'..game.Players.MaxPlayers
+		if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+			posofplayer = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+			roundpos = math.round(posofplayer.X)..", "..math.round(posofplayer.Y)..", "..math.round(posofplayer.Z)
+			script.Parent.HumanoidRootPartPos.Text = roundpos
+		elseif not game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+			script.Parent.HumanoidRootPartPos.Text = 'HumanoidRootPart Not Found'
+		end
+		script.Parent.TimeInGame.Text = roundNumber(game.workspace.DistributedGameTime)..' seconds'
+		script.Parent.LocalPlayerName.Text  = game.Players.LocalPlayer.Name
+		script.Parent.Fps.Text = tostring(FPS)..' fps'
+		script.Parent.Ping.Text = string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(), " ")[1]..' ms'
+		wait(0.5)
+	until script.Parent.Parent == nil
+end
+coroutine.wrap(NTOBK_fake_script)()
+local function HCKIS_fake_script() -- Kah.LocalScript 
+	local script = Instance.new('LocalScript', Kah)
+
+	repeat
+		if game:GetService'Workspace'.Terrain["_Game"].Admin:FindFirstChild('Regen') then
+			script.Parent.Regen.Text = 'Regen is Loaded'
+			script.Parent.Regen.TextColor3 = Color3.fromRGB(0, 255, 0)
+		elseif not game:GetService'Workspace'.Terrain["_Game"].Admin:FindFirstChild('Regen') then
+			script.Parent.Regen.Text = 'Regen is Not Loaded'
+			script.Parent.Regen.TextColor3 = Color3.fromRGB(255, 0, 0)
+		end
+		wait(0.1)
+	until script.Parent.Parent == nil
+end
+coroutine.wrap(HCKIS_fake_script)()
