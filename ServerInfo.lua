@@ -1,4 +1,9 @@
 --Made by NoobSploit#0001 leaving it open source because im to lazy to obfuscate it
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
 local ServerInfo = Instance.new("ScreenGui")
 local ServerInfoFrame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -19,12 +24,40 @@ local UICorner_4 = Instance.new("UICorner")
 local Rejoin = Instance.new("TextButton")
 local UICorner_5 = Instance.new("UICorner")
 local TimeInGame = Instance.new("TextLabel")
-local Kah = Instance.new("Frame")
+local InternalScripts = Instance.new("Frame")
 local UICorner_6 = Instance.new("UICorner")
 local Name_2 = Instance.new("Frame")
-local KohlsAdminHouse = Instance.new("TextLabel")
+local Name_3 = Instance.new("TextLabel")
 local UICorner_7 = Instance.new("UICorner")
+local ScriptScrollingFrame = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+local Script = Instance.new("TextButton")
+local Name_4 = Instance.new("TextLabel")
+local UICorner_8 = Instance.new("UICorner")
+local UICorner_9 = Instance.new("UICorner")
+local Script_2 = Instance.new("TextButton")
+local Name_5 = Instance.new("TextLabel")
+local UICorner_10 = Instance.new("UICorner")
+local UICorner_11 = Instance.new("UICorner")
+local RespectFilteringEnabled = Instance.new("Frame")
+local Name_6 = Instance.new("Frame")
+local Name_7 = Instance.new("TextLabel")
+local UICorner_12 = Instance.new("UICorner")
+local UnPlaySounds = Instance.new("TextButton")
+local UICorner_13 = Instance.new("UICorner")
+local SyncSounds = Instance.new("TextButton")
+local UICorner_14 = Instance.new("UICorner")
+local PlaySounds = Instance.new("TextButton")
+local UICorner_15 = Instance.new("UICorner")
+local UICorner_16 = Instance.new("UICorner")
+local Kah = Instance.new("Frame")
+local UICorner_17 = Instance.new("UICorner")
+local Name_8 = Instance.new("Frame")
+local KohlsAdminHouse = Instance.new("TextLabel")
+local UICorner_18 = Instance.new("UICorner")
 local Regen = Instance.new("TextLabel")
+
+--Properties:
 
 ServerInfo.Name = "ServerInfo"
 ServerInfo.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -37,10 +70,10 @@ ServerInfoFrame.BackgroundColor3 = Color3.fromRGB(81, 87, 98)
 ServerInfoFrame.BackgroundTransparency = 0.300
 ServerInfoFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)
 ServerInfoFrame.BorderSizePixel = 0
-ServerInfoFrame.Position = UDim2.new(0.597264409, -210, 0.321368933, 0)
+ServerInfoFrame.Position = UDim2.new(0.5, -113, 0.5, -106)
 ServerInfoFrame.Size = UDim2.new(0, 227, 0, 213)
 
-UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.CornerRadius = UDim.new(0, 5)
 UICorner.Parent = ServerInfoFrame
 
 Name.Name = "Name"
@@ -61,7 +94,7 @@ ServerStats.Text = "Server  Stats"
 ServerStats.TextColor3 = Color3.fromRGB(0, 0, 0)
 ServerStats.TextSize = 14.000
 
-UICorner_2.CornerRadius = UDim.new(0, 10)
+UICorner_2.CornerRadius = UDim.new(0, 5)
 UICorner_2.Parent = Name
 
 Players.Name = "Players"
@@ -120,7 +153,7 @@ HeadShot.Position = UDim2.new(0, 0, 0.826291084, 0)
 HeadShot.Size = UDim2.new(0, 37, 0, 37)
 HeadShot.Image = "rbxthumb://type=AvatarHeadShot&id=1676987923&w=420&h=420"
 
-UICorner_3.CornerRadius = UDim.new(0, 10)
+UICorner_3.CornerRadius = UDim.new(0, 5)
 UICorner_3.Parent = HeadShot
 
 HumanoidRootPartPos.Name = "HumanoidRootPartPos"
@@ -198,28 +231,212 @@ TimeInGame.Text = "nil s"
 TimeInGame.TextColor3 = Color3.fromRGB(0, 0, 0)
 TimeInGame.TextSize = 15.000
 
+InternalScripts.Name = "InternalScripts"
+InternalScripts.Parent = ServerInfoFrame
+InternalScripts.BackgroundColor3 = Color3.fromRGB(81, 87, 98)
+InternalScripts.BackgroundTransparency = 0.300
+InternalScripts.BorderColor3 = Color3.fromRGB(27, 42, 53)
+InternalScripts.BorderSizePixel = 0
+InternalScripts.Position = UDim2.new(0.925110161, -210, 1.05376351, 0)
+InternalScripts.Size = UDim2.new(0, 226, 0, 105)
+
+UICorner_6.CornerRadius = UDim.new(0, 10)
+UICorner_6.Parent = InternalScripts
+
+Name_2.Name = "Name"
+Name_2.Parent = InternalScripts
+Name_2.BackgroundColor3 = Color3.fromRGB(81, 87, 98)
+Name_2.BackgroundTransparency = 0.300
+Name_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Name_2.Size = UDim2.new(0, 226, 0, 24)
+
+Name_3.Name = "Name"
+Name_3.Parent = Name_2
+Name_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Name_3.BackgroundTransparency = 1.000
+Name_3.Position = UDim2.new(0, 0, -0.541666687, 0)
+Name_3.Size = UDim2.new(0, 226, 0, 50)
+Name_3.Font = Enum.Font.SourceSans
+Name_3.Text = "Scripts"
+Name_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+Name_3.TextSize = 14.000
+
+UICorner_7.CornerRadius = UDim.new(0, 10)
+UICorner_7.Parent = Name_2
+
+ScriptScrollingFrame.Name = "ScriptScrollingFrame"
+ScriptScrollingFrame.Parent = Name_2
+ScriptScrollingFrame.Active = true
+ScriptScrollingFrame.BackgroundColor3 = Color3.fromRGB(66, 71, 80)
+ScriptScrollingFrame.BackgroundTransparency = 0.200
+ScriptScrollingFrame.BorderSizePixel = 2
+ScriptScrollingFrame.Position = UDim2.new(0.0619469024, 0, 1.54166663, 0)
+ScriptScrollingFrame.Size = UDim2.new(0, 200, 0, 61)
+ScriptScrollingFrame.ScrollBarThickness = 3
+
+UIListLayout.Parent = ScriptScrollingFrame
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 5)
+
+Script.Name = "Script"
+Script.Parent = ScriptScrollingFrame
+Script.BackgroundColor3 = Color3.fromRGB(74, 80, 90)
+Script.BackgroundTransparency = 0.500
+Script.Size = UDim2.new(0, 99, 0, 33)
+Script.Font = Enum.Font.SourceSans
+Script.Text = "Execute"
+Script.TextColor3 = Color3.fromRGB(0, 0, 0)
+Script.TextSize = 14.000
+
+Name_4.Name = "Name"
+Name_4.Parent = Script
+Name_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Name_4.BackgroundTransparency = 1.000
+Name_4.Position = UDim2.new(1.125, 0, -0.0293089002, 0)
+Name_4.Size = UDim2.new(0, 81, 0, 33)
+Name_4.Font = Enum.Font.SourceSans
+Name_4.Text = "Infinite Yield"
+Name_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+Name_4.TextScaled = true
+Name_4.TextSize = 14.000
+Name_4.TextWrapped = true
+
+UICorner_8.CornerRadius = UDim.new(0, 10)
+UICorner_8.Parent = Name_4
+
+UICorner_9.CornerRadius = UDim.new(0, 10)
+UICorner_9.Parent = Script
+
+Script_2.Name = "Script"
+Script_2.Parent = ScriptScrollingFrame
+Script_2.BackgroundColor3 = Color3.fromRGB(74, 80, 90)
+Script_2.BackgroundTransparency = 0.500
+Script_2.Size = UDim2.new(0, 99, 0, 33)
+Script_2.Visible = false
+Script_2.Font = Enum.Font.SourceSans
+Script_2.Text = "Execute"
+Script_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Script_2.TextSize = 14.000
+
+Name_5.Name = "Name"
+Name_5.Parent = Script_2
+Name_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Name_5.BackgroundTransparency = 1.000
+Name_5.Position = UDim2.new(1.125, 0, -0.0293089002, 0)
+Name_5.Size = UDim2.new(0, 81, 0, 33)
+Name_5.Font = Enum.Font.SourceSans
+Name_5.Text = "PlaceHolder"
+Name_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+Name_5.TextScaled = true
+Name_5.TextSize = 14.000
+Name_5.TextWrapped = true
+
+UICorner_10.CornerRadius = UDim.new(0, 10)
+UICorner_10.Parent = Name_5
+
+UICorner_11.CornerRadius = UDim.new(0, 10)
+UICorner_11.Parent = Script_2
+
+RespectFilteringEnabled.Name = "RespectFilteringEnabled"
+RespectFilteringEnabled.Parent = ServerInfoFrame
+RespectFilteringEnabled.BackgroundColor3 = Color3.fromRGB(81, 87, 98)
+RespectFilteringEnabled.BackgroundTransparency = 0.300
+RespectFilteringEnabled.BorderColor3 = Color3.fromRGB(27, 42, 53)
+RespectFilteringEnabled.BorderSizePixel = 0
+RespectFilteringEnabled.Position = UDim2.new(1.97460032, -210, 0.00212013721, 0)
+RespectFilteringEnabled.Size = UDim2.new(0, 107, 0, 213)
+
+Name_6.Name = "Name"
+Name_6.Parent = RespectFilteringEnabled
+Name_6.BackgroundColor3 = Color3.fromRGB(81, 87, 98)
+Name_6.BackgroundTransparency = 0.300
+Name_6.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Name_6.Size = UDim2.new(0, 107, 0, 24)
+
+Name_7.Name = "Name"
+Name_7.Parent = Name_6
+Name_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Name_7.BackgroundTransparency = 1.000
+Name_7.Position = UDim2.new(0, 0, -0.541666687, 0)
+Name_7.Size = UDim2.new(0, 107, 0, 50)
+Name_7.Font = Enum.Font.SourceSans
+Name_7.Text = "Sound Editor"
+Name_7.TextColor3 = Color3.fromRGB(0, 0, 0)
+Name_7.TextSize = 14.000
+
+UICorner_12.CornerRadius = UDim.new(0, 10)
+UICorner_12.Parent = Name_6
+
+UnPlaySounds.Name = "UnPlaySounds"
+UnPlaySounds.Parent = RespectFilteringEnabled
+UnPlaySounds.BackgroundColor3 = Color3.fromRGB(74, 80, 90)
+UnPlaySounds.BackgroundTransparency = 0.300
+UnPlaySounds.Position = UDim2.new(0.14953272, 0, 0.319248855, 0)
+UnPlaySounds.Size = UDim2.new(0, 74, 0, 24)
+UnPlaySounds.Font = Enum.Font.SourceSans
+UnPlaySounds.Text = "Unplay Sounds"
+UnPlaySounds.TextColor3 = Color3.fromRGB(0, 0, 0)
+UnPlaySounds.TextScaled = true
+UnPlaySounds.TextSize = 14.000
+UnPlaySounds.TextWrapped = true
+
+UICorner_13.CornerRadius = UDim.new(0, 5)
+UICorner_13.Parent = UnPlaySounds
+
+SyncSounds.Name = "SyncSounds"
+SyncSounds.Parent = RespectFilteringEnabled
+SyncSounds.BackgroundColor3 = Color3.fromRGB(74, 80, 90)
+SyncSounds.BackgroundTransparency = 0.300
+SyncSounds.Position = UDim2.new(0.14953272, 0, 0.478873253, 0)
+SyncSounds.Size = UDim2.new(0, 74, 0, 24)
+SyncSounds.Font = Enum.Font.SourceSans
+SyncSounds.Text = "Sync Sounds"
+SyncSounds.TextColor3 = Color3.fromRGB(0, 0, 0)
+SyncSounds.TextScaled = true
+SyncSounds.TextSize = 14.000
+SyncSounds.TextWrapped = true
+
+UICorner_14.CornerRadius = UDim.new(0, 5)
+UICorner_14.Parent = SyncSounds
+
+PlaySounds.Name = "PlaySounds"
+PlaySounds.Parent = RespectFilteringEnabled
+PlaySounds.BackgroundColor3 = Color3.fromRGB(74, 80, 90)
+PlaySounds.BackgroundTransparency = 0.300
+PlaySounds.Position = UDim2.new(0.14953272, 0, 0.173708931, 0)
+PlaySounds.Size = UDim2.new(0, 74, 0, 24)
+PlaySounds.Font = Enum.Font.SourceSans
+PlaySounds.Text = "Play Sounds"
+PlaySounds.TextColor3 = Color3.fromRGB(0, 0, 0)
+PlaySounds.TextSize = 14.000
+
+UICorner_15.CornerRadius = UDim.new(0, 5)
+UICorner_15.Parent = PlaySounds
+
+UICorner_16.CornerRadius = UDim.new(0, 10)
+UICorner_16.Parent = RespectFilteringEnabled
+
 Kah.Name = "Kah"
 Kah.Parent = ServerInfoFrame
 Kah.BackgroundColor3 = Color3.fromRGB(81, 87, 98)
 Kah.BackgroundTransparency = 0.300
 Kah.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Kah.BorderSizePixel = 0
-Kah.Position = UDim2.new(0.410723805, -210, 0.00212013721, 0)
+Kah.Position = UDim2.new(0.393102705, -210, 0.00212018378, 0)
 Kah.Size = UDim2.new(0, 107, 0, 213)
-Kah.Visible = false
 
-UICorner_6.CornerRadius = UDim.new(0, 10)
-UICorner_6.Parent = Kah
+UICorner_17.CornerRadius = UDim.new(0, 10)
+UICorner_17.Parent = Kah
 
-Name_2.Name = "Name"
-Name_2.Parent = Kah
-Name_2.BackgroundColor3 = Color3.fromRGB(81, 87, 98)
-Name_2.BackgroundTransparency = 0.300
-Name_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Name_2.Size = UDim2.new(0, 107, 0, 24)
+Name_8.Name = "Name"
+Name_8.Parent = Kah
+Name_8.BackgroundColor3 = Color3.fromRGB(81, 87, 98)
+Name_8.BackgroundTransparency = 0.300
+Name_8.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Name_8.Size = UDim2.new(0, 107, 0, 24)
 
 KohlsAdminHouse.Name = "Kohls Admin House"
-KohlsAdminHouse.Parent = Name_2
+KohlsAdminHouse.Parent = Name_8
 KohlsAdminHouse.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 KohlsAdminHouse.BackgroundTransparency = 1.000
 KohlsAdminHouse.Position = UDim2.new(0, 0, -0.541666687, 0)
@@ -229,8 +446,8 @@ KohlsAdminHouse.Text = "Kohls Admin House"
 KohlsAdminHouse.TextColor3 = Color3.fromRGB(0, 0, 0)
 KohlsAdminHouse.TextSize = 14.000
 
-UICorner_7.CornerRadius = UDim.new(0, 10)
-UICorner_7.Parent = Name_2
+UICorner_18.CornerRadius = UDim.new(0, 10)
+UICorner_18.Parent = Name_8
 
 Regen.Name = "Regen"
 Regen.Parent = Kah
@@ -244,7 +461,9 @@ Regen.TextColor3 = Color3.fromRGB(0, 0, 0)
 Regen.TextSize = 14.000
 Regen.TextWrapped = true
 
-local function EHLELN_fake_script() -- ServerInfoFrame.LocalScript 
+-- Scripts:
+
+local function CBQPTZ_fake_script() -- ServerInfoFrame.Dragify 
 	local script = Instance.new('LocalScript', ServerInfoFrame)
 
 	-- not my drag script
@@ -289,16 +508,10 @@ local function EHLELN_fake_script() -- ServerInfoFrame.LocalScript
 		end
 	end)
 end
-coroutine.wrap(EHLELN_fake_script)()
-local function EAKIFF_fake_script()
+coroutine.wrap(CBQPTZ_fake_script)()
+local function LCMYM_fake_script() -- ServerInfoFrame.LocalScript 
 	local script = Instance.new('LocalScript', ServerInfoFrame)
 
-	if game.PlaceId == 112420803 or 115670532 then
-		script.Parent.Kah.Visible = true
-	else
-		script.Parent.Kah:Destroy()
-	end
-	
 	local FPS = 0
 	
 	local Tiempo = tick()
@@ -341,11 +554,64 @@ local function EAKIFF_fake_script()
 		wait(0.5)
 	until script.Parent.Parent == nil
 end
-coroutine.wrap(EAKIFF_fake_script)()
-local function TGJAVCB_fake_script() -- Kah.LocalScript 
+coroutine.wrap(LCMYM_fake_script)()
+local function FTII_fake_script() -- Script.Execute 
+	local script = Instance.new('LocalScript', Script)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end)
+end
+coroutine.wrap(FTII_fake_script)()
+local function SHXC_fake_script() -- Script_2.Execute 
+	local script = Instance.new('LocalScript', Script_2)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		print('executed')
+	end)
+end
+coroutine.wrap(SHXC_fake_script)()
+local function KSTTVZY_fake_script() -- RespectFilteringEnabled.LocalScript 
+	local script = Instance.new('LocalScript', RespectFilteringEnabled)
+
+	if game.SoundService.RespectFilteringEnabled == false then
+		script.Parent.Visible = true
+	else
+		script.Parent:Destroy()
+	end
+	
+	script.Parent.PlaySounds.MouseButton1Click:Connect(function()
+		for i,v in next, game.Workspace:GetDescendants() do
+			if v:IsA('Sound') and v.Name ~= 'GettingUp' and v.Name ~= 'FreeFalling' and v.Name ~= 'Died' and v.Name ~= 'Jumping' and v.Name ~= 'Landing' and v.Name ~= 'Running' and v.Name ~= 'Splash' and v.Name ~= 'Swimming' then
+				print(v)
+				v:Play()
+			end
+		end
+	end)
+	
+	script.Parent.UnPlaySounds.MouseButton1Click:Connect(function()
+		for i,v in next, game.Workspace:GetDescendants() do
+			if v:IsA('Sound') then
+				v:Stop()
+			end
+		end
+	end)
+	
+	script.Parent.SyncSounds.MouseButton1Click:Connect(function()
+		for i,v in next, game.Workspace:GetDescendants() do
+			if v:IsA('Sound') then
+				v.TimePosition = 0
+			end
+		end
+	end)
+end
+coroutine.wrap(KSTTVZY_fake_script)()
+local function OGPFX_fake_script() -- Kah.LocalScript 
 	local script = Instance.new('LocalScript', Kah)
 
-	repeat
+	if game.PlaceId == 112420803 then
+		script.Parent.Visible = true
+		repeat
 		if game:GetService'Workspace'.Terrain["_Game"].Admin:FindFirstChild('Regen') then
 			script.Parent.Regen.Text = 'Regen is Loaded'
 			script.Parent.Regen.TextColor3 = Color3.fromRGB(0, 255, 0)
@@ -354,6 +620,21 @@ local function TGJAVCB_fake_script() -- Kah.LocalScript
 			script.Parent.Regen.TextColor3 = Color3.fromRGB(255, 0, 0)
 		end
 		wait(0.1)
-	until script.Parent.Parent == nil
+		until script.Parent.Parent.Parent == nil
+	elseif game.PlaceId == 115670532 then
+		script.Parent.Visible = true
+		repeat
+			if game:GetService'Workspace'.Terrain["_Game"].Admin:FindFirstChild('Regen') then
+				script.Parent.Regen.Text = 'Regen is Loaded'
+				script.Parent.Regen.TextColor3 = Color3.fromRGB(0, 255, 0)
+			elseif not game:GetService'Workspace'.Terrain["_Game"].Admin:FindFirstChild('Regen') then
+				script.Parent.Regen.Text = 'Regen is Not Loaded'
+				script.Parent.Regen.TextColor3 = Color3.fromRGB(255, 0, 0)
+			end
+			wait(0.1)
+		until script.Parent.Parent == nil
+	else
+		script.Parent:Destroy()
+	end
 end
-coroutine.wrap(TGJAVCB_fake_script)()
+coroutine.wrap(OGPFX_fake_script)()
