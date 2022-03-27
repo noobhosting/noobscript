@@ -1,0 +1,70 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+Title.Text = "Infinite Yield Premium FE"
+
+addcmd('copylastcommand',{'clastcmd'},function(args, speaker)
+	if cmdHistory[1]:sub(1,11) ~= 'lastcommand' and cmdHistory[1]:sub(1,7) ~= 'lastcmd' then
+		toClipboard(cmdHistory[1])
+	end
+end)
+
+addcmd('execute',{},function(args, speaker)
+        loadstring(getstring(1))()
+end)
+
+addcmd('unequiptools',{},function(args, speaker)
+        speaker.Character:FindFirstChildOfClass('Humanoid'):UnequipTools()
+end)
+
+addcmd('fakeout',{},function(args, speaker)
+        game.workspace.FallenPartsDestroyHeight = 'nan'
+
+local workspace = game.workspace
+
+		plr = game.Players.LocalPlayer
+		Human = plr.Character and plr.Character:FindFirstChildOfClass("Humanoid", true)
+		pos = Human and Human.RootPart and Human.RootPart.CFrame
+		pos1 = workspace.CurrentCamera.CFrame
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(0,-490,0))
+		        wait(0.3)
+		print(pos1)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(pos1)) + Vector3.new(pos1.X,50,pos1.Z)
+end)
+
+
+notify("Infinite Yield Premium Loaded")
+
+spawn(function()
+	while wait(0.01) do
+
+		Title.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.675)
+		Dark.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.6)
+		Holder.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.675)
+		Settings.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.6)
+		Prefix.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.64)
+		PrefixBox.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.425)
+		Button.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.425)
+		On.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.55)
+		Notification.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.6)
+		Title_2.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.675)
+		CloseImage.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.05)
+		PinImage.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.05)
+		Tooltip.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.64)
+		Title_3.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.675)
+		IntroBackground.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.25)
+		KeybindsFrame.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.6)
+		Close.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.5)--buttons
+		Add.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.5)
+		Delete.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.5)
+		Example_2.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.5)
+		Text_3.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.5)
+		Delete_2.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.5)
+		Close.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.5)
+		background_2.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.6)
+		BindTo.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.5)
+		BindTriggerSelect.BackgroundColor3 = Color3.fromHSV(tick()%5/5,0.95,0.5)
+
+
+
+
+	end
+end)
