@@ -1,4 +1,10 @@
+local start = tick()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+function round(num)
+    return math.floor(num * 10) / 10
+end
+
 Title.Text = "Infinite Yield Premium FE"
 
 addcmd('copylastcommand',{'clastcmd'},function(args, speaker)
@@ -29,9 +35,6 @@ local workspace = game.workspace
 		print(pos1)
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(pos1)) + Vector3.new(pos1.X,50,pos1.Z)
 end)
-
-
-notify("Infinite Yield Premium Loaded")
 
 spawn(function()
 	while wait(0.01) do
@@ -68,3 +71,4 @@ spawn(function()
 
 	end
 end)
+notify("Infinite Yield Premium loaded in "..round(tick()-start)..' seconds')
