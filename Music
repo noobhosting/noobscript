@@ -1,0 +1,84 @@
+local base64decode = (syn and syn.crypt.base64.decode) or (crypt and crypt.base64decode)
+local getcustomasset = getsynasset or getcustomasset
+local path = 'Music\\'
+local music = math.random(1,29)
+local volume = 5
+
+local songs = {
+	[1] = 9390876171,
+	[2] = 9391282036,
+	[3] = 9397214062,
+    [4] = 9397452109,
+    [5] = 9399264106,
+    [5] = 9399337155,
+    [6] = 9407162343,
+    [7] = 9407162343,
+    [8] = 9400666569,
+    [9] = 9407198143,
+    [10] = 9407220553,
+    [11] = 9407240335,
+    [12] = 9562381863,
+    [13] = 9562401751,
+    [14] = 9562448770,
+    [15] = 9562516087,
+    [16] = 9562557805,
+    [17] = 9612902272,
+    [18] = 9612989487,
+    [19] = 9613041181,
+    [20] = 9613089869,
+    [21] = 9658931373, --meow
+    [22] = 9658968173, --shout
+    [23] = 9658998420, --What You Won't Do for Love
+    [24] = 9659022631, --I'm Still Standing
+    [25] = 9659037233, --Hug Me
+    [26] = 9659052182, --Everybody Wants To Rule The World
+    [27] = 9659071115, --Treehouse
+    [28] = 9659078466, --Alien Blues
+    [29] = 9658414745 --cheese
+}
+ 
+if base64decode and getcustomasset and isfolder and makefolder and writefile then
+    if not isfolder('Music') then
+        makefolder('Music')
+    end
+ 
+    local function stop()
+        for i,v in next, game:GetService('CoreGui'):GetChildren() do
+            if v:IsA('Sound') then
+                v.Volume = 0
+                v:Destroy()
+            end
+        end
+    end
+ 
+    local function play(name)
+        stop()
+        _G.Sound = Instance.new("Sound",game:GetService('CoreGui'))
+		_G.Sound.Name = name
+        _G.Sound.SoundId = getcustomasset(path..name)
+        _G.Sound.PlayOnRemove = true
+        _G.Sound:Play()
+        _G.Sound.Looped = true
+        if type(volume) == 'number' then
+            _G.Sound.Volume = volume
+        else
+            _G.Sound.Volume = 1
+        end
+    end
+ 
+    local function check(id)
+    	local name = game:GetService("MarketplaceService"):GetProductInfo(id).Name..'.mp3'
+        if isfile(path..name) then
+            play(name)
+        else
+            writefile(path..name,base64decode(game:GetObjects("rbxassetid://"..id)[1]:FindFirstChildOfClass('Script').Source))
+            play(name)
+        end
+    end
+ 
+	if type(music) == 'number' and music <= #songs then
+		check(songs[music])
+    else
+        stop()
+    end
+end
