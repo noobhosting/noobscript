@@ -93,7 +93,7 @@ data.ammount = #data.jobids
 updatename()
 updatefile()
 
-if code() then
+if code then
     code()
 end
 
