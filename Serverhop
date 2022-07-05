@@ -95,6 +95,7 @@ updatefile()
 
 if code then
     code()
+    rprint("@@LIGHT_MAGENTA@@",'Executed')
 end
 
 serverhop()
