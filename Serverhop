@@ -1,0 +1,95 @@
+if syn then request = syn.request end
+
+local function rprint(color,info)
+    rconsoleprint(color)
+    rconsoleprint(info..'\n')
+end
+
+repeat task.wait() until game:IsLoaded()
+
+local game = game --faster
+local Players = game:GetService('Players')
+local http = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+local jobid = game.JobId
+local data;
+
+rprint("@@CYAN@@",("Joined: %s\n%s of players"):format(jobid,#Players:GetPlayers()))
+
+function jsone(str) return http:JSONEncode(str) end
+function jsond(str) return http:JSONDecode(str) end
+
+if not isfolder('ServerHop') then
+    rprint("@@LIGHT_RED@@","Folder not found")
+	makefolder('ServerHop')
+end
+
+if isfile(("ServerHop\\%s.json"):format(game.PlaceId)) then
+    local filedata = readfile(('ServerHop\\%s.json'):format(game.PlaceId))
+    data = jsond(filedata)
+    rprint("@@GREEN@@","File data Loaded Successfully")
+else
+    rprint("@@LIGHT_RED@@","File data not found")
+    data = {
+        jobids = {},
+        ammount = 0
+    }
+end
+
+local function updatefile()
+	local succ,err = pcall(function()
+		writefile(('ServerHop\\%s.json'):format(game.PlaceId), jsone(data))
+	end)
+	if err then return warn(err) end
+	rprint('@@GREEN@@','File data Updated')
+end
+
+local function updatename()
+    coroutine.wrap(function()
+        rconsolename(("%s servers visited"):format(tostring(data.ammount)))
+    end)()
+end
+
+local function serverhop()
+    rprint('@@YELLOW@@','Attempting to serverhop')
+    local servers = {}
+    local cursor = ''
+    while cursor and #servers == 0 do
+        task.wait()
+        local req = request({
+            Url = 'https://games.roblox.com/v1/games/'..game.PlaceId..'/servers/Public?sortOrder=Asc&limit=100&cursor='..cursor
+        })
+        local body = jsond(req.Body)
+        if body and body.data then
+            task.spawn(function()
+                for i,v in next, body.data do
+                    if type(v) == 'table' and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and not table.find(data.jobids,v.id) then
+                        table.insert(servers, 1, v.id)
+                    end 
+                end
+            end)
+            if body.nextPageCursor then
+                cursor = body.nextPageCursor
+            else
+                cursor = nil
+            end
+        end
+    end
+
+    while #servers > 0 do
+        local random = servers[math.random(1, #servers)]
+        
+        TeleportService:TeleportToPlaceInstance(game.PlaceId, random, Players.LocalPlayer)
+        rprint("@@LIGHT_CYAN@@",("Found Server: %s"):format(random))
+        task.wait(1)
+    end
+end
+
+if not table.find(data.jobids,jobid) then
+    table.insert(data.jobids,jobid)
+end
+data.ammount = #data.jobids
+
+updatename()
+updatefile()
+serverhop()
