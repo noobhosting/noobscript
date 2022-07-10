@@ -1,8 +1,10 @@
 --[[
-Made By: NoobSploit#0001
-V3rmillion: https://v3rmillion.net/member.php?action=profile&uid=2566454
+	Made By: NoobSploit#0001
+	V3rmillion: https://v3rmillion.net/member.php?action=profile&uid=2566454
 ]]
 
+local queueteleport = syn and syn.queue_on_teleport or queue_on_teleport
+queueteleport([[loadstring(game:HttpGet('https://raw.githubusercontent.com/noobhosting/noobscript/main/AutoServerHop.lua'))()]])
 if syn then request = syn.request end
 
 local function rprint(info,color)
