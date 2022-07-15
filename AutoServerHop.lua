@@ -4,7 +4,6 @@
 ]]
 
 local queueteleport = syn and syn.queue_on_teleport or queue_on_teleport
-queueteleport([[loadstring(game:HttpGet('https://raw.githubusercontent.com/noobhosting/noobscript/main/AutoServerHop.lua'))()]])
 if syn then request = syn.request end
 
 local function rprint(info,color)
@@ -139,4 +138,5 @@ rprint(("Joined: %s | %s"):format(placeid,jobid),"cyan")
 rprint(("Players: %s"):format(#Players:GetPlayers()),"cyan")
 
 filecode()
+queueteleport(loadstring(game:HttpGet('https://raw.githubusercontent.com/noobhosting/noobscript/main/AutoServerHop.lua'))())
 serverhop()
