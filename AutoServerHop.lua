@@ -138,5 +138,5 @@ rprint(("Joined: %s | %s"):format(placeid,jobid),"cyan")
 rprint(("Players: %s"):format(#Players:GetPlayers()),"cyan")
 
 filecode()
-queueteleport(loadstring(game:HttpGet('https://raw.githubusercontent.com/noobhosting/noobscript/main/AutoServerHop.lua'))())
+queueteleport([[loadstring(game:HttpGet('https://raw.githubusercontent.com/noobhosting/noobscript/main/AutoServerHop.lua'))()]])
 serverhop()
