@@ -38,7 +38,7 @@ local function esp(v)
         local teamcolor = BrickColor.new(tostring(v.TeamColor))
         local color = Color3.new(teamcolor.r,teamcolor.g,teamcolor.b)
         local teamcheck = function()
-            if lp.Team == v.Team then
+            if lp.Team ~= nil and lp.Team == v.Team then
                 return false
             else
                 return inview
@@ -48,7 +48,7 @@ local function esp(v)
         text.Text = ("%s\n[%s] [%s/%s]"):format(name(),pos(),health,maxhealth)
         text.Size = 16
         text.Position = Vector2.new(tpos.X,tpos.Y)
-		text.Color = Color3.fromRGB(255, 255, 255)
+		text.Color = color
 		text.Outline = true
 		text.Center = true
 		text.Visible = teamcheck()
