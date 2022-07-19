@@ -16,8 +16,7 @@ local function esp(v)
 			line:Remove()
             loop:Disconnect()
             return
-        end
-        if not v.Character or not v.Character:FindFirstChildOfClass('Humanoid') or not v.Character:FindFirstChildOfClass('Humanoid').RootPart then
+        elseif not v.Character or not v.Character:FindFirstChildOfClass('Humanoid') or not v.Character:FindFirstChildOfClass('Humanoid').RootPart then
             text.Visible = false
             line.Visible = false
             return
