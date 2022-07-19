@@ -11,10 +11,16 @@ local function esp(v)
     local loop
     
     loop = rs.Heartbeat:Connect(function()
-        if not v or not v.Character or not v.Character:FindFirstChildOfClass('Humanoid') or not v.Character:FindFirstChildOfClass('Humanoid').RootPart then
+        if not v then
             text:Remove()
 			line:Remove()
-            return loop:Disconnect()
+            loop:Disconnect()
+            return
+        end
+        if not v.Character or not v.Character:FindFirstChildOfClass('Humanoid') or not v.Character:FindFirstChildOfClass('Humanoid').RootPart then
+            text.Visible = false
+            line.Visible = false
+            return
         end
         
 		local name = function()
