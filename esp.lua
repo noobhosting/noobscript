@@ -70,15 +70,9 @@ end
 for i,v in next, Players:GetPlayers() do
    	if v ~= lp then
        	esp(v)
-
-       	v.CharacterAdded:Connect(function()
-           	esp(v)
-       	end)
    	end
 end
 
 Players.PlayerAdded:Connect(function(plr)
-    plr.CharacterAdded:Connect(function()
-        esp(plr)
-    end)
+    esp(plr)
 end)
