@@ -26,7 +26,7 @@ local function esp(v)
             if v.Name == v.DisplayName then
                 return tostring(v.Name)
             else
-                return ("%s [@%s]"):format(tostring(v.Name),tostring(v.DisplayName))
+                return ("%s [@%s]"):format(tostring(v.DisplayName),tostring(v.Name))
             end
         end
 		local pos = function()
