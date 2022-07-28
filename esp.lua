@@ -41,7 +41,7 @@ local function esp(v)
 
 		local pos = function()
 			if lp and lp.Character and lp.Character:FindFirstChildOfClass('Humanoid') and lp.Character:FindFirstChildOfClass('Humanoid').RootPart then
-				return math.round(tonumber((lp.Character:FindFirstChildOfClass('Humanoid').RootPart.CFrame.p - v.Character:FindFirstChildOfClass('Humanoid').RootPart.CFrame.p).Magnitude))
+				return math.round(lp:DistanceFromCharacter(v.Character:FindFirstChildOfClass('Humanoid').RootPart.CFrame.p))
 			else
 				return 'N/A'
 			end
@@ -74,7 +74,7 @@ local function esp(v)
 		text.Outline = true
 		text.Center = true
 		text.Visible = teamcheck()
-        text.ZIndex = 1
+        text.ZIndex = 2
         
         line.Visible = teamcheck()
         line.From = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
