@@ -1,3 +1,7 @@
+if esp then return end
+
+getgenv().esp = true
+
 local UserInputService = game:GetService("UserInputService")
 local Players = game:GetService('Players')
 local rs = game:GetService('RunService')
