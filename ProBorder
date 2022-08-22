@@ -3,7 +3,7 @@ https://raw.githubusercontent.com/78n/NoobSploit/main/ProBorder.lua
 ]]
 local hint = Instance.new("Hint")
 hint.Parent = game:GetService("CoreGui")
-hint.Text = "I am moving loadstrings get the new loadstring at:\nhttps://raw.githubusercontent.com/78n/NoobSploit/main/ProBorder.lua\nThe script will execute in 3 seconds
+hint.Text = "I am moving loadstrings get the new loadstring at:\nhttps://raw.githubusercontent.com/78n/NoobSploit/main/ProBorder.lua\nThe script will execute in 3 seconds"
 
 wait(3)
 hint:Destroy()
