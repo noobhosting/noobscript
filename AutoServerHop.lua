@@ -1,8 +1,3 @@
---[[
-	Made By: NoobSploit#0001
-	V3rmillion: https://v3rmillion.net/member.php?action=profile&uid=2566454
-]]
-
 local queueteleport = syn and syn.queue_on_teleport or queue_on_teleport
 if syn then request = syn.request end
 
@@ -24,9 +19,9 @@ local function rprint(info,color)
 end
 
 local game = game --saves 0.00000001 second!!!!
-local Players = game:GetService('Players')
-local http = game:GetService("HttpService")
-local TeleportService = game:GetService("TeleportService")
+local Players = game:FindService('Players')
+local http = game:FindService("HttpService")
+local TeleportService = game:FindService("TeleportService")
 local jobid = game.JobId
 local placeid = game.PlaceId
 local filecode
